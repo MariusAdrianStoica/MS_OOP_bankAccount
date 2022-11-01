@@ -1,5 +1,7 @@
 package se.lexicon;
 
+import java.sql.SQLOutput;
+
 public class App
 {
     public static void main( String[] args )
@@ -34,7 +36,9 @@ public class App
         System.out.println("________________________________");
         B.withdraw(500);
         System.out.println("BankAccount info after withdraw is: \n" + B.BankAccInformation());
+        System.out.println("________________________________");
 
-
+        System.out.println("Codeby : Marius Stoica");
+        System.out.println("Have a good day!");
     }
 }
