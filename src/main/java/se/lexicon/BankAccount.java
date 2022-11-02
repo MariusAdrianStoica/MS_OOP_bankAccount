@@ -4,14 +4,17 @@ package se.lexicon;
 
 public class BankAccount {
     // Fields
-    public int counter;
+    private int counter;
     private int accountNumber;
     private double balance;
     private String customerName;
     private String email;
     private String phoneNumber;
 
-
+private static int sequencer=1000;
+public BankAccount(){
+    this.counter = ++sequencer;
+}
 
     /*  Constructor
     public BankAccount (int accountNumber,double balance, String customerName, String email, String phoneNumber){
@@ -72,7 +75,7 @@ public class BankAccount {
     }
 
     public String BankAccInformation() {
-        return " BankAccount : " + accountNumber + "\n Balance\t : " + balance + "\n CustomerName: " + customerName + "\n Email\t\t : " + email + "\n PhoneNumber : " + phoneNumber;
+        return "Client  "+ "  ID  : " +counter + "\n AccountNumber: " + accountNumber + "\n Balance\t  : " + balance + "\n CustomerName : " + customerName + "\n Email\t\t  : " + email + "\n PhoneNumber  : " + phoneNumber;
     }
 //Methods
     public void deposit(double amount) {
@@ -86,10 +89,13 @@ public class BankAccount {
 
     public void withdraw(double amount) {
         if (amount <= 0) {
+            System.out.println("You tried to withdraw :" + amount);
             System.out.println("Value to withdraw is less or equals with 0");
         } else if ((this.balance - amount) < 0) {
+            System.out.println("You tried to withdraw :" + amount);
             System.out.println("Value to withdraw is greater than balance. Balance is insufficient!");
         } else {
+            System.out.println("You tried to withdraw :" + amount);
             this.balance -= amount;
         }
     }
